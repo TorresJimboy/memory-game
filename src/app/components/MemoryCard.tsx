@@ -31,7 +31,7 @@ export function MemoryCard({ icon: Icon, isFlipped, isMatched, onClick }: Memory
       >
         {/* Card Back */}
         <div
-          className="absolute inset-0 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center"
+          className="absolute inset-0 rounded-xl bg-gradient-to-br from-darkblue-500 to-blue-400 flex items-center justify-center"
           style={{
             backfaceVisibility: 'hidden',
           }}

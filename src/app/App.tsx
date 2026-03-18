@@ -3,6 +3,7 @@ import { MemoryCard } from './components/MemoryCard';
 import { Button } from './components/ui/button';
 import { Heart, Star, Zap, Crown, Flame, Sparkles, Trophy, Gem } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import bgImage from '../assets/game-bg.avif';
 
 interface Card {
   id: number;
@@ -115,11 +116,18 @@ export default function App() {
   const isGameWon = matchedPairs === icons.length;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center p-4">
-      <div className="max-w-2xl w-full">
+    <div className="min-h-screen flex items-center justify-center p-4 bg-cover bg-center relative"
+        style={{ backgroundImage: `url(${bgImage})` }}
+      >
+        <div className="absolute inset-0 bg-black/40"></div>
+
+        <div className="relative z-10 max-w-2xl w-full">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-5xl font-bold text-white mb-2">Memory Game</h1>
+          <h1 className="text-5xl font-bold text-cyan-300
+          drop-shadow-[0_0_5px_#22d3ee]
+          drop-shadow-[0_0_15px_#22d3ee]
+          drop-shadow-[0_0_30px_#0ea5e9] mb-2">Memory Game</h1>
           <p className="text-white/90">Find all the matching pairs!</p>
         </div>
 
@@ -164,7 +172,7 @@ export default function App() {
           <Button
             onClick={resetGame}
             size="lg"
-            className="bg-white text-purple-600 hover:bg-white/90 font-bold"
+            className="bg-white text-cyan-600 hover:bg-white/90 font-bold"
           >
             {isGameWon ? 'Play Again' : 'Reset Game'}
           </Button>
